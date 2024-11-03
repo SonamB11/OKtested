@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="process-container">
+        <h1>Smart Supermart Solution</h1>
+        
+        <form method="POST" enctype="multipart/form-data">
+            <label for="task">Choose a task:</label>
+            <select name="task" id="task">
+                <option value="OCR">OCR</option>
+                <option value="Image Recognition">Image Recognition</option>
+            </select>
+            
+            <label for="image">Upload Image:</label>
+            <input type="file" name="image" accept="image/*" required>
+            
+            <button type="submit">Proceed</button>
+        </form>
+        
+        {% if task == 'OCR' %}
+            <h2>OCR Results</h2>
+            <img src="{{ img_path }}" alt="Uploaded Image">
+            <ul>
+                {% for (bbox, text, confidence) in ocr_result %}
+                    <li>Text: {{ text }}, Confidence: {{ confidence }}</li>
+                {% endfor %}
+            </ul>
+        {% elif task == 'Image Recognition' %}
+            <h2>Product Recognition Result</h2>
+            <img src="{{ img_path }}" alt="Uploaded Image">
+            <p>Predicted Product: {{ product }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

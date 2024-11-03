@@ -1,0 +1,94 @@
+/* styles.css */
+
+/* General styles for both pages */
+body {
+    font-family:'Lucida Sans Unicode';
+    background-image: url('/static/images/mart.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #028308;
+}
+
+button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 300px;
+}
+
+label {
+    font-size: 1.1em;
+}
+
+select, input[type="file"], button {
+    font-size: 1em;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+select, input[type="file"] {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Styles specific to the Welcome page */
+.welcome-container {
+    text-align: center;
+    background-color: wheat;
+    margin-top: 50px;
+}
+
+/* Process page styling */
+.process-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    text-align: left;
+    background: wheat;
+}
+
+.process-container img {
+    margin-top: 20px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.process-container h2 {
+    color: #555;
+}
