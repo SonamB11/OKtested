@@ -1,0 +1,9 @@
+version: 1
+services:
+  - type: web
+    name: Smart Vision Based Supermart Solution App
+    env: python
+    plan: standard
+    pythonVersion: 3.12  
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
